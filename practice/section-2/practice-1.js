@@ -1,5 +1,9 @@
 'use strict';
 
 function countSameElements(collection) {
-  return '实现练习要求，并改写该行代码。';
+  return collection.reduce((acc, current) => {
+    if(acc.find(a => a.key === current)) return acc;
+    acc.push({key: current, count: collection.filter(c => c === current).length});
+    return acc;
+  },[])
 }

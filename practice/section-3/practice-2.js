@@ -1,5 +1,10 @@
 'use strict';
 
 function createUpdatedCollection(collectionA, objectB) {
-  return '实现练习要求，并改写该行代码。';
+  return collectionA.map(a => {
+    if(objectB.value.includes(a.key)){
+      a.count = a.count - Math.floor(a.count/3);
+    }
+    return a;
+  });
 }
